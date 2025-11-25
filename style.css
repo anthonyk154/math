@@ -1,0 +1,269 @@
+/* GLOBAL */
+body {
+  margin: 0;
+  background: #0f0f0f;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+.hidden {
+  display: none;
+}
+
+/* VIEWPORT FIX FOR IOS */
+:root {
+  --vh: 1vh;
+}
+
+/* MATH MENU */
+#mathMenu {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 15px;
+  flex-wrap: wrap;
+}
+
+.mathBtn {
+  padding: 10px 14px;
+  background: #1f2937;
+  color: white;
+  border: 1px solid #374151;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.mathBtn:hover {
+  background: #2563eb;
+}
+
+#mathContent {
+  margin-top: 20px;
+  text-align: center;
+  padding: 10px;
+}
+
+.title {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* MULTIPLICATION TABLE */
+#multTable {
+  margin: 20px auto;
+  border-collapse: collapse;
+}
+
+#multTable td {
+  border: 1px solid #333;
+  padding: 10px 12px;
+  background: #1e293b;
+  color: white;
+  font-size: 16px;
+}
+
+/* CHAT LAYOUT */
+.layout {
+  display: flex;
+  height: calc(var(--vh, 1vh) * 100);
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 260px;
+  background: #111827;
+  padding: 20px;
+  border-right: 2px solid #1f2937;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sidebar input {
+  padding: 10px;
+  width: 100%;
+  border-radius: 6px;
+  border: none;
+}
+
+.sidebar button {
+  padding: 10px;
+  border: none;
+  background: #3b82f6;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.sidebar button:hover {
+  background: #2563eb;
+}
+
+.admin-title {
+  margin-top: 30px;
+  font-size: 15px;
+  opacity: 0.8;
+}
+
+.admin-btn {
+  background: #ef4444 !important;
+}
+.admin-btn:hover {
+  background: #b91c1c !important;
+}
+
+/* CHAT AREA */
+.chat-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-header {
+  padding: 18px;
+  background: #1f2937;
+  border-bottom: 2px solid #111827;
+}
+
+.messages {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  background: #0f172a;
+  height: calc(var(--vh) * 100 - 300px);
+}
+
+/* MESSAGES */
+.msg {
+  background: #1e293b;
+  padding: 14px;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  display: flex;
+  gap: 12px;
+}
+
+.msg img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.msg-content {
+  flex: 1;
+}
+
+.msg-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  opacity: 0.8;
+}
+
+.msg-text {
+  margin-top: 6px;
+  font-size: 16px;
+}
+
+.delete-btn {
+  background: none;
+  color: #ef4444;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+/* INPUT AREA */
+.chat-input-area {
+  padding: 16px;
+  background: #1f2937;
+  display: flex;
+  gap: 10px;
+  border-top: 2px solid #111827;
+  padding-bottom: max(16px, env(safe-area-inset-bottom)); /* iPhone Safe Area */
+}
+
+.chat-input-area input {
+  flex: 1;
+  padding: 14px;
+  border-radius: 8px;
+  border: none;
+  font-size: 16px;
+}
+
+.chat-input-area button {
+  padding: 14px 20px;
+  background: #22d3ee;
+  border: none;
+  color: black;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.chat-input-area button:hover {
+  background: #06b6d4;
+}
+
+/* MOBILE FIXES */
+@media (max-width: 600px) {
+  /* make chat stacked */
+  .layout {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px;
+    border-right: none;
+    border-bottom: 2px solid #1f2937;
+  }
+
+  .messages {
+    height: calc(var(--vh) * 100 - 320px);
+  }
+
+  .msg {
+    flex-direction: column;
+  }
+
+  .msg img {
+    width: 36px;
+    height: 36px;
+  }
+
+  .chat-input-area {
+    flex-direction: column;
+  }
+}
+
+/* iPhone safe area padding for messages */
+@supports (padding: max(0px)) {
+  .messages {
+    padding-bottom: max(16px, env(safe-area-inset-bottom));
+  }
+}
+a {
+  box-shadow: inset 0 0 0 0 #272b5c;
+  color: #54b3d6;
+  padding: 0 .25rem;
+  margin: 0 -.25rem;
+  transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+}
+a:hover {
+  color: #fff;
+  box-shadow: inset 490px 0 0 0 #110360;;
+}
+
+/* Presentational styles */
+a {
+  color: #54b3d6;
+  font-family: 'Poppins', sans-serif;
+  font-size: 27px;
+  font-weight: 700;
+  line-height: 1.5;
+  text-decoration: none;
+}

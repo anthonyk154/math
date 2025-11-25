@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Math Helper</title>
+  <meta name="description" content="Free Math Helper">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="icon" type="image/x-icon" href="favicon.png">
+  <link rel="apple-touch-icon" href="favicon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- MULTIPLICATION CHART -->
+  <div id="mathWrapper">
+    <div id="mathMenu">
+      <button class="mathBtn" onclick="switchMath('quiz')">Random Quiz</button>
+  <button class="mathBtn" onclick="switchMath('mult')">Multiplication Chart</button>
+  <button class="mathBtn" onclick="switchMath('fract')">Fractions</button>
+  <button class="mathBtn" onclick="switchMath('integers')">Integers</button>
+  <button class="mathBtn" onclick="switchMath('percent')">Percent</button>
+  <button class="mathBtn" onclick="switchMath('equation')">Equations</button>
+  <button class="mathBtn" onclick="switchMath('area')">Area & Perimeter</button>
+</div>
+
+<div id="mathContent"></div>
+    <h1 class="title">Multiplication Chart</h1>
+    <table id="multTable"></table>
+  </div>
+
+  <!-- FULL CHAT BOX -->
+  <div id="chatWrapper" class="hidden">
+
+    <div class="layout">
+
+      <!-- SIDEBAR -->
+      <div class="sidebar">
+        <h2>👤 Profile</h2>
+        <input id="username" placeholder="Enter username">
+        <input id="avatarURL" placeholder="Avatar URL">
+        <button id="saveProfile">Save Profile</button>
+
+        <h3 class="admin-title">Admin</h3>
+        <button id="clearBtn" class="admin-btn">🛑 Clear ALL Chat</button>
+      </div>
+
+      <!-- CHAT AREA -->
+      <div class="chat-area">
+        <div class="chat-header">
+          <h1>💬 Public Chat - <span><a href="https://anthonyswebsites.site/" target="_blank" class="namelink" style="color: white; text-decoration: underline rgb(82, 82, 176); cursor: pointer;">AnthonysWebsites</a></span></h1>
+        </div>
+
+        <div id="messages" class="messages"></div>
+
+        <div class="chat-input-area">
+          <input id="msgInput" placeholder="Type a message...">
+          <button id="sendBtn">Send</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
