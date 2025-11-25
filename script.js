@@ -159,6 +159,37 @@ function switchMath(page) {
     newQuizQuestion();
   }
 }
+// -----------------------------
+// MOBILE LONG PRESS TO OPEN CHAT
+// -----------------------------
+
+let mobile = /Mobi|Android/i.test(navigator.userAgent);
+let pressTimer;
+
+function enableMobileHold() {
+  const fracBtn = document.getElementById("fractionsBtn");
+  if (!fracBtn) return;
+
+  // Start press timer
+  fracBtn.addEventListener("touchstart", () => {
+    if (!mobile) return;
+    pressTimer = setTimeout(() => {
+      toggleChat(); // opens chat
+    }, 2000); // 2 seconds
+  });
+
+  // Cancel if finger lifted early
+  fracBtn.addEventListener("touchend", () => {
+    clearTimeout(pressTimer);
+  });
+
+  fracBtn.addEventListener("touchmove", () => {
+    clearTimeout(pressTimer); // if they slide finger away
+  });
+}
+
+// Run after buttons exist
+setTimeout(enableMobileHold, 500);
 
 /* QUIZ GENERATOR */
 let qNum1, qNum2, qOp, qCorrect;
